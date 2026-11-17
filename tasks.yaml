@@ -1,0 +1,28 @@
+research_city_task:
+  description: >
+    The traveller is starting from {origin}, wants to visit {city},
+    travelling {travel_dates}, with interests: {interests}.
+    Research current weather, seasonal events, and rough costs
+    (flights, hotels) for {city}. Search the web for fresh data.
+  expected_output: >
+    A short report on {city}: weather, events, and estimated costs.
+  agent: city_researcher
+
+local_guide_task:
+  description: >
+    Create an in-depth guide for {city} tailored to these interests:
+    {interests}. Cover top attractions, local food, customs,
+    and getting around.
+  expected_output: >
+    A detailed city guide with attractions, food spots and practical tips.
+  agent: local_expert
+
+itinerary_task:
+  description: >
+    Using the research and the city guide, create a day-by-day itinerary
+    for {travel_dates}. Include places to visit, where to eat, hotel
+    suggestions, packing tips and a budget breakdown.
+  expected_output: >
+    A complete travel plan in Markdown with a day-by-day schedule and budget.
+  agent: travel_planner
+  output_file: output/travel_plan.md
